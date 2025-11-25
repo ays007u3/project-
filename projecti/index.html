@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Movies hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">Movieshub</div>
+        <div>
+          <h1>Movie Store </h1>
+        </div>
+      </div>
+
+      <div class="controls">
+        <select id="categorySelect" title="Filter by category">
+          <option value="all">All</option>
+          <option value="action">Action</option>
+          <option value="horror">Horror</option>
+          <option value="hindi">Hindi</option>
+          <option value="tamil">Tamil</option>
+          <option value="south">South</option>
+          <option value="new">New Release</option>
+        </select>
+
+        <input id="searchInput" placeholder="Search title or year..." />
+        <button id="cartBtn">🛒 Cart (<span id="cartCount">0</span>)</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="grid" class="grid"></section>
+    </main>
+
+    <footer class="foot">© Designed by Bhoi Ayush . All Right Reserved.</footer>
+
+  </div>
+
+  <!-- Details modal -->
+  <div id="modalBack" class="modal-back" aria-hidden="true">
+    <div class="modal-card" role="dialog">
+      <button id="modalClose" class="modal-close">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Cart modal -->
+  <div id="cartBack" class="modal-back" aria-hidden="true">
+    <div class="modal-card" role="dialog">
+      <button id="cartClose" class="modal-close">✕</button>
+      <h2>Your Cart</h2>
+      <div id="cartList" class="cart-list"></div>
+      <div style="margin-top:12px">Total: ₹<span id="cartTotal">0</span></div>
+      <div style="margin-top:12px"><button id="checkoutBtn" class="btn primary">Proceed to Pay</button></div>
+    </div>
+  </div>
+
+  <!-- Fake payment modal -->
+  <div id="payBack" class="modal-back" aria-hidden="true">
+    <div class="modal-card" role="dialog">
+      <button id="payClose" class="modal-close">✕</button>
+      <h2>Payment</h2>
+      <p>Amount: ₹<span id="payAmount">0</span></p>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button id="payUPI" class="btn">Pay with UPI</button>
+        <button id="payCard" class="btn">Pay with Card</button>
+      </div>
+      <p id="payMsg" style="margin-top:12px;color:var(--muted)"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
